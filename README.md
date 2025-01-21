@@ -1,6 +1,6 @@
 # LLamaIndex Tour Planner
 
-In this tutorial, we'll create a tour planner using LlamaIndex Workflow.
+We'll create a tour planner using LlamaIndex Workflow.
 
 Stack Used:
 
@@ -9,14 +9,14 @@ Stack Used:
 
 Full tutorial 👇
 
-[![LlamaIndex Tour Planner](https://img.youtube.com/vi/DJOJ4WD1XgY/maxresdefault.jpg)](https://www.youtube.com/watch?v=DJOJ4WD1XgY)
+![LlamaIndex Tour Planner](https://img.youtube.com/vi/DJOJ4WD1XgY/maxresdefault.jpg)
 
 ## How to use
 
 - Clone the repo
 
 ```bash
-git clone https://github.com/rsrohan99/llamaindex-trip-planner.git
+git clone https://github.com/dreamboat26/llamaindex-trip-planner.git
 cd llamaindex-trip-planner
 ```
 
