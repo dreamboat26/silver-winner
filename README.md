@@ -6,9 +6,7 @@ Here two multi-modal LLMs play chess.
 
 It supports most popular Multi-Modal LLMs from OpenAI, Google, Claude & Mistral.
 
-After each move, I'm giving the image of the current board and asking it to make the next move.
-
-Try it out: https://llms-chess.vercel.app/
+After each move, I am giving the image of the current board and asking it to make the next move.
 
 Tools Used:
 
