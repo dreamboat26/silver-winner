@@ -1,36 +1,56 @@
-# LlamaIndex Implementations
+### Advanced chatbot over LlamaIndex TS documentation 🔥
 
-This repository showcases various implementations and experiments using **LlamaIndex**, a powerful framework designed to integrate large language models (LLMs) with structured data sources. LlamaIndex enables seamless data ingestion, flexible indexing, and efficient querying, making it easier to build advanced language model applications.
+https://github.com/rsrohan99/llamaindex-docs-agent/assets/62835870/42fbd1ba-c42f-4b86-b33e-093272d76639
 
-## Overview
+# Multi-document Agents
 
-LlamaIndex allows users to index and query structured data from various sources, such as APIs, databases, and documents, and leverage LLMs to process and retrieve relevant information. The implementations in this repository explore a variety of use cases and optimizations, such as indexing large datasets, querying APIs, and integrating with popular LLMs like OpenAI and HuggingFace.
+This is a [LlamaIndex](https://www.llamaindex.ai/) project bootstrapped with [`create-llama`](https://github.com/run-llama/LlamaIndexTS/tree/main/packages/create-llama).
 
-## Key Features
+This multi-document agent is built over the LlamaIndex.TS documentation.
 
-- **Data Integration**: Easily connect to different data sources, including APIs, text files, and databases.
-- **Flexible Indexing**: Build customized indexes to structure and query your data in ways that suit your application.
-- **LLM Integration**: Directly integrate with popular language models like OpenAI GPT and HuggingFace to enhance query processing.
-- **Efficient Querying**: Perform complex data retrieval tasks efficiently using the indexed data.
-- **Optimizations**: Explore optimizations to scale LlamaIndex for large datasets, ensuring high performance in production environments.
+We use our multi-document agent architecture:
 
-## Purpose
+- Individual query engine per document
+- Top level Orchestrator agent across documents that can pick relevant subsets
 
-The purpose of this repository is to demonstrate how LlamaIndex can be used to create versatile, high-performance applications that make use of large language models for structured data querying. Whether you're building a search engine, a data retrieval system, or integrating AI with your data pipeline, LlamaIndex simplifies the process of combining structured data with language models.
+This also streams _all_ intermediate results from the agent via a custom Callback handler.
 
-## Implementations
+We use this Custom Callback handler to also send intermediate nodes that are retrieved during retrieval of document level query engines, to the frontend.
 
-This repository contains multiple implementations, including but not limited to:
+It allows us to show the relevant section of the documentation in the preview window.
 
-- **Text File Indexing**: Indexing and querying large collections of text data.
-- **API Integration**: Connecting to external APIs, indexing the returned data, and performing efficient queries.
-- **Database Integration**: Indexing data from relational or NoSQL databases for querying with LLMs.
-- **Performance Optimizations**: Techniques and strategies for improving the scalability and performance of LlamaIndex when working with large datasets.
+## Main Files to Look At
 
-## Intended Audience
+This extends beyond the simple `create-llama` example. To see changes, look at the following files:
 
-This repository is aimed at developers, data engineers, and researchers who are interested in leveraging large language models with structured data. Whether you are building AI-powered search tools, integrating external data with LLMs, or exploring new ways to optimize data processing with LlamaIndex, you'll find practical examples and techniques here.
+- `backend/app/utils/index.py` - contains core logic for constructing + getting multi-doc agent
+- `backend/app/api/routers/chat.py` - contains implementation of chat endpoint + threading to stream intermediate responses.
 
-## License
+We also created some custom `Transformations` that we use with out robust `IngestionPipeline`
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+As we update the documentations in the `data` folder, this `IngestionPipeline` takes care of handling duplicates, applying our custom nodes transformation logic etc.
+
+The custom transformations we've used:
+
+- `Deduplicator` - handles duplicates.
+- `HyperlinksRemover` - cleans the markdown files.
+- `Summarizer` - creates summary of the node and adds that as a metadata.
+- `URLExtractor` - generates the url of a particular node section.
+- `Upserter` - updates the docstore with new and updated nodes, deletes old ones.
+
+## Getting Started
+
+First, startup the backend as described in the [backend README](./backend/README.md).
+
+Second, run the development server of the frontend as described in the [frontend README](./frontend/README.md).
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Learn More
+
+To learn more about LlamaIndex, take a look at the following resources:
+
+- [LlamaIndex Documentation](https://docs.llamaindex.ai) - learn about LlamaIndex (Python features).
+- [LlamaIndexTS Documentation](https://ts.llamaindex.ai) - learn about LlamaIndex (Typescript features).
+
+You can check out [the LlamaIndexTS GitHub repository](https://github.com/run-llama/LlamaIndexTS) - your feedback and contributions are welcome!
