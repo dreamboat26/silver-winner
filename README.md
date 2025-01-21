@@ -7,7 +7,7 @@ We are using LlamaIndex Pydantic Program mode for structured output generation a
 First clone the repo:
 
 ```bash
-git clone https://github.com/dreamboat26/ai-diagram-generator.git
+git clone https://github.com/dreamboat26/silver-winner.git
 cd ai-diagram-generator
 ```
 
