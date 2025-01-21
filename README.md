@@ -1,8 +1,4 @@
-In this tutorial we'll build a fully local chat-with-pdf app using LlamaIndexTS, Ollama, Next.JS.
-
-
-https://github.com/rsrohan99/local-pdf-ai/assets/62835870/6f2497ea-15b4-47ea-9482-dade56434b2b
-
+Built a fully local chat-with-pdf app using LlamaIndexTS, Ollama, Next.JS.
 
 Stack used:
 - **LlamaIndex TS** as the RAG framework
@@ -252,10 +248,3 @@ if (!isServer) {
 }
 ```
 - Next.JS server actions don't support sending intermediate results, hence couldn't make streaming work.
-
-
-Thanks for reading. Stay tuned for more.
-
-I tweet about these topics and anything I'm exploring on a regular basis.
-[Follow me on twitter](https://twitter.com/clusteredbytes)
-
