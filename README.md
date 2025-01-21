@@ -7,8 +7,6 @@ Stack Used:
 - LlamaIndex workflow for orchestration.
 - SerpAPI for finding hotels, flights and places to visit
 
-Full tutorial 👇
-
 ![LlamaIndex Tour Planner](https://img.youtube.com/vi/DJOJ4WD1XgY/maxresdefault.jpg)
 
 ## How to use
