@@ -26,7 +26,7 @@ Tech stack used for this bot:
 ### Installation
 
 ```bash
-$ git clone https://github.com/dreamboat26/Llamabot.git
+$ git clone https://github.com/dreamboat26/silver-winner.git
 
 $ cd Llamabot
 ```
