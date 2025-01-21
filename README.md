@@ -1,6 +1,6 @@
 # Llama Researcher
 
-In this tutorial, we'll create LLama-Researcher using LlamaIndex workflows, inspired by [GPT-Researcher.](https://github.com/assafelovic/gpt-researcher)
+We'll create LLama-Researcher using LlamaIndex workflows, inspired by [GPT-Researcher.](https://github.com/assafelovic/gpt-researcher)
 
 Stack Used:
 
@@ -10,14 +10,14 @@ Stack Used:
 
 Full tutorial 👇
 
-[![Llama-Researcher](https://img.youtube.com/vi/gHdQcoeNgMU/maxresdefault.jpg)](https://www.youtube.com/watch?v=gHdQcoeNgMU)
+![Llama-Researcher](https://img.youtube.com/vi/gHdQcoeNgMU/maxresdefault.jpg)
 
 ## How to use
 
 - Clone the repo
 
 ```bash
-git clone https://github.com/rsrohan99/Llama-Researcher.git
+git clone https://github.com/dreamboat26/Llama-Researcher.git
 cd Llama-Researcher
 ```
 
