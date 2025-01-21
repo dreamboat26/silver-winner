@@ -11,9 +11,7 @@
 - [x] **Generate audio narrations** from scripts 🎙️ (using ElevenLabs)
 - [x] **Render full video presentations** 🎥 with all the slides and voiceover (using FFmpeg)
 
-## Video Demo with overview of the multi-agent setup
-
-[![Presenter](https://img.youtube.com/vi/q8PAD9IS3Ig/maxresdefault.jpg)](https://www.youtube.com/watch?v=q8PAD9IS3Ig)
+![Presenter](https://img.youtube.com/vi/q8PAD9IS3Ig/maxresdefault.jpg)
 
 ## Tools Used
 
@@ -41,8 +39,8 @@ puppeteer browsers install chrome
 - Clone the repo
 
 ```bash
-git clone https://github.com/rsrohan99/presenter.git
-cd presenter
+git clone https://github.com/dreamboat26/silver-winner.git
+cd make-presentation
 ```
 
 - Install dependencies
