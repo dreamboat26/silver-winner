@@ -1,36 +1,76 @@
-# LlamaIndex Implementations
+In this tutorial, we'll see how to use LlamaIndex Pydantic Program mode and partial object parsing to send intermediate pydantic objects from incomplete JSONs to the frontend for an intuitive user experience.
 
-This repository showcases various implementations and experiments using **LlamaIndex**, a powerful framework designed to integrate large language models (LLMs) with structured data sources. LlamaIndex enables seamless data ingestion, flexible indexing, and efficient querying, making it easier to build advanced language model applications.
+Full video tutorial under 2.5 minutes below 👇 🔥🔥
 
-## Overview
+[![AI Diagram Generator](https://img.youtube.com/vi/Z0l2WaFYQ88/maxresdefault.jpg)](https://www.youtube.com/watch?v=Z0l2WaFYQ88)
 
-LlamaIndex allows users to index and query structured data from various sources, such as APIs, databases, and documents, and leverage LLMs to process and retrieve relevant information. The implementations in this repository explore a variety of use cases and optimizations, such as indexing large datasets, querying APIs, and integrating with popular LLMs like OpenAI and HuggingFace.
+We use LlamaIndex Pydantic Program mode for structured output generation and we use partial object parsing to send intermediate objects that are validated using Pydantic models to the frontend.
 
-## Key Features
+Click the above thumbnail for the detailed video tutorial.
 
-- **Data Integration**: Easily connect to different data sources, including APIs, text files, and databases.
-- **Flexible Indexing**: Build customized indexes to structure and query your data in ways that suit your application.
-- **LLM Integration**: Directly integrate with popular language models like OpenAI GPT and HuggingFace to enhance query processing.
-- **Efficient Querying**: Perform complex data retrieval tasks efficiently using the indexed data.
-- **Optimizations**: Explore optimizations to scale LlamaIndex for large datasets, ensuring high performance in production environments.
+## Getting Started
 
-## Purpose
+First clone the repo:
 
-The purpose of this repository is to demonstrate how LlamaIndex can be used to create versatile, high-performance applications that make use of large language models for structured data querying. Whether you're building a search engine, a data retrieval system, or integrating AI with your data pipeline, LlamaIndex simplifies the process of combining structured data with language models.
+```bash
+git clone https://github.com/rsrohan99/ai-diagram-generator.git
+cd ai-diagram-generator
+```
 
-## Implementations
+## Start the Backend
 
-This repository contains multiple implementations, including but not limited to:
+`cd` into the `backend` directory
 
-- **Text File Indexing**: Indexing and querying large collections of text data.
-- **API Integration**: Connecting to external APIs, indexing the returned data, and performing efficient queries.
-- **Database Integration**: Indexing data from relational or NoSQL databases for querying with LLMs.
-- **Performance Optimizations**: Techniques and strategies for improving the scalability and performance of LlamaIndex when working with large datasets.
+```bash
+cd backend
+```
 
-## Intended Audience
+### First create `.env` from `.env.example`
 
-This repository is aimed at developers, data engineers, and researchers who are interested in leveraging large language models with structured data. Whether you are building AI-powered search tools, integrating external data with LLMs, or exploring new ways to optimize data processing with LlamaIndex, you'll find practical examples and techniques here.
+```bash
+cp .env.example .env
+```
 
-## License
+### Set the OpenAI key in .env
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```bash
+OPENAI_API_KEY=****
+```
+
+### Install the dependencies
+
+```bash
+poetry install
+```
+
+### Start the backend server
+
+```bash
+poetry run python main.py
+```
+
+## Start the Frontend
+
+`cd` into the `frontend` directory
+
+```bash
+cd frontend
+```
+
+### First create `.env` from `.env.example`
+
+```bash
+cp .env.example .env
+```
+
+### Install the dependencies
+
+```bash
+npm i
+```
+
+### Start the frontend server
+
+```bash
+npm run dev
+```
