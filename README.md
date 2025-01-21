@@ -1,36 +1,76 @@
-# LlamaIndex Implementations
+# Presenter 🎦
 
-This repository showcases various implementations and experiments using **LlamaIndex**, a powerful framework designed to integrate large language models (LLMs) with structured data sources. LlamaIndex enables seamless data ingestion, flexible indexing, and efficient querying, making it easier to build advanced language model applications.
+### Introducing **Presenter**: A Multi-Agent AI Tool that can:
 
-## Overview
+- [x] **Create beautiful presentations** for any given topic 🔥
+- [x] **Render intuitive & visually appealing diagrams** 🖼️ for slides when needed (using Mermaid)
+- [x] **Write scripts** for every slide 📜
+- [x] **Render & View interactive presentations in HTML** 💻 (using markdown-slides & reveal.js)
+- [x] **Intuitive speaker view with scripts** (reveal.js)
+- [x] **Export presentations to PDF** 🖨️ (using DeckTape)
+- [x] **Generate audio narrations** from scripts 🎙️ (using ElevenLabs)
+- [x] **Render full video presentations** 🎥 with all the slides and voiceover (using FFmpeg)
 
-LlamaIndex allows users to index and query structured data from various sources, such as APIs, databases, and documents, and leverage LLMs to process and retrieve relevant information. The implementations in this repository explore a variety of use cases and optimizations, such as indexing large datasets, querying APIs, and integrating with popular LLMs like OpenAI and HuggingFace.
+## Video Demo with overview of the multi-agent setup
 
-## Key Features
+[![Presenter](https://img.youtube.com/vi/q8PAD9IS3Ig/maxresdefault.jpg)](https://www.youtube.com/watch?v=q8PAD9IS3Ig)
 
-- **Data Integration**: Easily connect to different data sources, including APIs, text files, and databases.
-- **Flexible Indexing**: Build customized indexes to structure and query your data in ways that suit your application.
-- **LLM Integration**: Directly integrate with popular language models like OpenAI GPT and HuggingFace to enhance query processing.
-- **Efficient Querying**: Perform complex data retrieval tasks efficiently using the indexed data.
-- **Optimizations**: Explore optimizations to scale LlamaIndex for large datasets, ensuring high performance in production environments.
+## Tools Used
 
-## Purpose
+- [LlamaIndex](https://www.llamaindex.ai/) Workflows to orchestrate the entire multi-agent setup
+- [markdown-slides](https://github.com/dadoomer/markdown-slides) and reveal.js for rendering & viewing the presentation
+- [Mermaid](https://github.com/mermaid-js/mermaid) to render the diagrams
+- [DeckTape](https://github.com/astefanutti/decktape) to export the presentation to PDF
+- [ElevenLabs](https://elevenlabs.io/) API to create audio narration for the slides
+- [FFmpeg](https://www.ffmpeg.org/) to render the full presentation with voiceover
 
-The purpose of this repository is to demonstrate how LlamaIndex can be used to create versatile, high-performance applications that make use of large language models for structured data querying. Whether you're building a search engine, a data retrieval system, or integrating AI with your data pipeline, LlamaIndex simplifies the process of combining structured data with language models.
+## How to use
 
-## Implementations
+- First install the necessary tools
 
-This repository contains multiple implementations, including but not limited to:
+```bash
+python -m pip install git+https://gitlab.com/da_doomer/markdown-slides.git
+npm install -g @mermaid-js/mermaid-cli
+npm install -g decktape
+npm install -g puppeteer
+puppeteer browsers install chrome
+```
 
-- **Text File Indexing**: Indexing and querying large collections of text data.
-- **API Integration**: Connecting to external APIs, indexing the returned data, and performing efficient queries.
-- **Database Integration**: Indexing data from relational or NoSQL databases for querying with LLMs.
-- **Performance Optimizations**: Techniques and strategies for improving the scalability and performance of LlamaIndex when working with large datasets.
+- Install FFmpeg for your operating system from [here](https://www.ffmpeg.org/download.html)
 
-## Intended Audience
+- Clone the repo
 
-This repository is aimed at developers, data engineers, and researchers who are interested in leveraging large language models with structured data. Whether you are building AI-powered search tools, integrating external data with LLMs, or exploring new ways to optimize data processing with LlamaIndex, you'll find practical examples and techniques here.
+```bash
+git clone https://github.com/rsrohan99/presenter.git
+cd presenter
+```
 
-## License
+- Install dependencies
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```bash
+pip install -r requirements.txt
+```
+
+- Create `.env` file and add `OPENAI_API_KEY` and `ELEVENLABS_API_KEY`
+
+```bash
+cp .env.example .env
+```
+
+- Run the workflow with the topic to create the presentation on
+
+```bash
+python run.py "observer design pattern"
+```
+
+- Add `--export-video` argument to generate a full video of the presentation with voiceover.
+
+```bash
+python run.py "observer design pattern" --export-video
+```
+
+- After running the workflow, it'll put all the files (slides, video, pdf etc.) inside the `presentations` folder
+- There be a folder for each presentation generated
+- The interactive HTML for the presentation will be at `presentations/<presentation_folder>/output/index.html`
+- The extracted PDF of the presentation will be at `presentations/<presentation_folder>/presentation.pdf`
+- The rendered video with voiceover of the presentation will be at `presentations/<presentation_folder>/presentation.mp4`
