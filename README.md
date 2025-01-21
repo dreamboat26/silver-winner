@@ -15,7 +15,7 @@ Stack Used:
 - Clone the repo
 
 ```bash
-git clone https://github.com/dreamboat26/Llama-Researcher.git
+git clone https://github.com/dreamboat26/silver-winner.git
 cd Llama-Researcher
 ```
 
