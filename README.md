@@ -8,8 +8,6 @@ Stack Used:
 - Tavily API as the search engine api
 - Other LlamaIndex abstractions like VectorStoreIndex, PostProcessors etc.
 
-Full tutorial 👇
-
 ![Llama-Researcher](https://img.youtube.com/vi/gHdQcoeNgMU/maxresdefault.jpg)
 
 ## How to use
